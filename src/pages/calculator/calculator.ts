@@ -1,25 +1,15 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CalculatorPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
-@Component({
+import { Component } from '@angular/core'; import { IonicPage } from 'ionic-angular';
+@IonicPage() @Component({
   selector: 'page-calculator',
-  templateUrl: 'calculator.html',
-})
+  templateUrl: 'calculator.html' })
 export class CalculatorPage {
+  height: number;
+  weight: number;
+  final_bmi: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor() {}
+  calculateBMI() {
+    this.final_bmi = this.weight / (this.height / 100 * this.height / 100);
+    console.log(this.final_bmi);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalculatorPage');
-  }
-
 }
